@@ -30,22 +30,22 @@ export class QuestionsComponent implements OnInit {
     this.startCounter();
   }
 
-  getAllQuestions() {
+  getAllQuestions(): void {
     this.questionService.getQuestions()
       .subscribe(res => {
         this.questionList = res;
       })
   }
 
-  nextQuestion() {
+  nextQuestion(): void {
     this.currentQuestion++;
   }
 
-  previousQuestion() {
+  previousQuestion(): void {
     this.currentQuestion--;
   }
 
-  answerQuestion(currentQno: number, option: any) {
+  answerQuestion(currentQno: number, option: any): void {
 
     if (currentQno === this.questionList.length) {
       this.isTestCompleted = true;
@@ -73,9 +73,9 @@ export class QuestionsComponent implements OnInit {
     }
   }
 
-  startCounter() {
+  startCounter(): void {
     this.interval$ = interval(1000)
-      .subscribe(val => {
+      .subscribe(() => {
         this.counter--;
         if (this.counter === 0) {
           this.currentQuestion++;
@@ -88,18 +88,18 @@ export class QuestionsComponent implements OnInit {
     }, 600000);
   }
 
-  stopCounter() {
+  stopCounter(): void {
     this.interval$.unsubscribe();
     this.counter = 0;
   }
 
-  resetCounter() {
+  resetCounter(): void {
     this.stopCounter();
     this.counter = 60;
     this.startCounter();
   }
 
-  resetTest() {
+  resetTest(): void {
     this.resetCounter();
     this.getAllQuestions();
     this.points = 0;
@@ -109,9 +109,10 @@ export class QuestionsComponent implements OnInit {
 
   }
 
-  getProgressPercent() {
+  getProgressPercent(): string {
     this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
     return this.progress;
 
   }
+
 }

@@ -2,7 +2,7 @@
   "questions": [
     {
       "questionText": "You’re really busy at work and a colleague is telling you their life story and personal woes. You:",
-      "options": [
+      "answers": [
         {
           "text": "Don’t dare to interrupt them",
           "introvert": true
@@ -23,7 +23,7 @@
     },
     {
       "questionText": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
-      "options": [
+      "answers": [
         {
           "text": "Look at your watch every two minutes",
           "introvert": false
@@ -48,7 +48,7 @@
     },
     {
       "questionText": "You’re having an animated discussion with a colleague regarding a project that you’re in charge of. You:",
-      "options": [
+      "answers": [
         {
           "text": "Don’t dare contradict them",
           "introvert": false
@@ -69,7 +69,7 @@
     },
     {
       "questionText": "You are taking part in a guided tour of a museum. You:",
-      "options": [
+      "answers": [
         {
           "text": "Are a bit too far towards the back so don’t really hear what the guide is saying",
           "introvert": true
@@ -90,7 +90,7 @@
     },
     {
       "questionText": "During dinner parties at your home, you have a hard time with people who:",
-      "options": [
+      "answers": [
         {
           "text": "Ask you to tell a story in front of everyone else",
           "introvert": false
