@@ -38,11 +38,11 @@ export class QuestionsComponent implements OnInit {
   }
 
   nextQuestion(): void {
-    this.currentQuestion++;
+    if (this.currentQuestion < this.questionList.length - 1) this.currentQuestion++;
   }
 
   previousQuestion(): void {
-    this.currentQuestion--;
+    if (this.currentQuestion > 0) this.currentQuestion--;
   }
 
   answerQuestion(currentQno: number, option: any): void {
