@@ -3,9 +3,9 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {WelcomeComponent} from './welcome/welcome.component';
-import {QuestionsComponent} from './question/questions.component';
-import {HeaderComponent} from './header/header.component';
+import {WelcomeComponent} from './components/welcome/welcome.component';
+import {QuestionsComponent} from './components/question/questions.component';
+import {HeaderComponent} from './components/header/header.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ChangeBgDirective} from './change-bg.directive';
 

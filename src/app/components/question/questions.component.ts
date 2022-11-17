@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
-import {QuestionService} from '../service/question.service';
-import {Question} from "../models/question";
+import {QuestionService} from '../../services/question.service';
+import {Question} from "../../models/question";
 
 @Component({
   selector: 'app-questions',
