@@ -4,13 +4,13 @@
       <span>Welcome {{name}}</span>
     </div>
 
-    <ng-container *ngIf="!isTestCompleted; else testRunning">
+    <ng-container *ngIf="!test.isTestCompleted; else testRunning">
       <div class="d-flex justify-content-around py-3">
         <div class="score">
           <h5>{{points}} Points</h5>
         </div>
         <div class="question-remain">
-          <span>Question {{currentQuestion + 1}} of {{questionList.length}}</span>
+          <span>Question {{currentQuestion + 1}} of {{test.questionList.length}}</span>
         </div>
         <div class="timer">
           <h5>{{counter}} sec ⏱</h5>
@@ -23,11 +23,11 @@
       </div>
       <div class="question">
         <div class="card">
-          <h3>{{questionList[currentQuestion].questionText}}</h3>
+          <h3>{{test.questionList[currentQuestion].questionText}}</h3>
         </div>
       </div>
       <div class="options">
-        <ol *ngFor="let answer of questionList[currentQuestion]?.answers">
+        <ol *ngFor="let answer of test.questionList[currentQuestion]?.answers">
           <li (click)="answerQuestion(currentQuestion+1,answer)">
             <div appChangeBg [isCorrect]="answer.introvert" class="card">
               {{answer.text}}
@@ -42,7 +42,7 @@
         <button class="btn" (click)="resetTest()">
           <i class="fa fa-refresh text-primary fa-3x" aria-hidden="true"></i>
         </button>
-        <button [disabled]="currentQuestion>=questionList.length" class="btn" (click)="nextQuestion()">
+        <button [disabled]="currentQuestion>=test.questionList.length" class="btn" (click)="nextQuestion()">
           <i class="fa text-primary fa-chevron-right fa-3x" aria-hidden="true"></i>
         </button>
       </div>
@@ -54,9 +54,9 @@
              src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg" alt="">
         <div class="result text-center col-md-6 col-sm-12">
           <h3>Congratulations!! <br>You have completed the test. <br>Below is your result:</h3>
-          <p>Total Question Attempted : {{questionList.length}}</p>
-          <p>Total Correct Answered : {{correctAnswer}} </p>
-          <p>Total Wrong Answered : {{inCorrectAnswer}} </p>
+          <p>Total Question Attempted : {{test.questionList.length}}</p>
+          <p>Total Correct Answered : {{test.correctAnswer}} </p>
+          <p>Total Wrong Answered : {{test.inCorrectAnswer}} </p>
           <p>Your Score : {{points}} Points </p>
         </div>
       </div>

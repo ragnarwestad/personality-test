@@ -1,29 +1,7 @@
+import {Answer} from "./answer";
 
 export class Question {
-
   questionText: string = '';
-  answers: Answer[] = [
-    {
-      text: '',
-      introvert: true
-    } as Answer,
-    {
-      text: '',
-      introvert: false
-    } as Answer,
-    {
-      text: '',
-      introvert: true
-    } as Answer,
-    {
-      text: '',
-      introvert: false
-    } as Answer
-  ]
-
+  answers: Answer[] = [];
 }
 
-export class Answer {
-  text: string = '';
-  introvert: boolean = false;
-}

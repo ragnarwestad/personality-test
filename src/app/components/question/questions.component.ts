@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {interval, Subscription} from 'rxjs';
 import {QuestionService} from '../../services/question.service';
-import {Question} from "../../models/question";
+import {PersonalityTest} from "../../models/personality-test";
 
 @Component({
   selector: 'app-questions',
@@ -11,15 +11,12 @@ import {Question} from "../../models/question";
 export class QuestionsComponent implements OnInit {
 
   public name: string = "";
-  public questionList: Question[] = [];
+  public test: PersonalityTest = new PersonalityTest();
   public currentQuestion: number = 0;
   public points: number = 0;
   counter = 60;
-  correctAnswer: number = 0;
-  inCorrectAnswer: number = 0;
   interval$: Subscription = Subscription.EMPTY;
   progress: string = "0";
-  isTestCompleted: boolean = false;
 
   constructor(private questionService: QuestionService) {
   }
@@ -33,12 +30,12 @@ export class QuestionsComponent implements OnInit {
   getAllQuestions(): void {
     this.questionService.getQuestions()
       .subscribe(res => {
-        this.questionList = res;
+        this.test.questionList = res;
       })
   }
 
   nextQuestion(): void {
-    if (this.currentQuestion < this.questionList.length - 1) this.currentQuestion++;
+    if (this.currentQuestion < this.test.questionList.length - 1) this.currentQuestion++;
   }
 
   previousQuestion(): void {
@@ -47,13 +44,13 @@ export class QuestionsComponent implements OnInit {
 
   answerQuestion(currentQno: number, option: any): void {
 
-    if (currentQno === this.questionList.length) {
-      this.isTestCompleted = true;
+    if (currentQno === this.test.questionList.length) {
+      this.test.isTestCompleted = true;
       this.stopCounter();
     }
     if (option.correct) {
       this.points += 10;
-      this.correctAnswer++;
+      this.test.correctAnswer++;
       setTimeout(() => {
         this.currentQuestion++;
         this.resetCounter();
@@ -64,7 +61,7 @@ export class QuestionsComponent implements OnInit {
     } else {
       setTimeout(() => {
         this.currentQuestion++;
-        this.inCorrectAnswer++;
+        this.test.inCorrectAnswer++;
         this.resetCounter();
         this.getProgressPercent();
       }, 1000);
@@ -110,7 +107,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   getProgressPercent(): string {
-    this.progress = ((this.currentQuestion / this.questionList.length) * 100).toString();
+    this.progress = ((this.currentQuestion / this.test.questionList.length) * 100).toString();
     return this.progress;
 
   }
