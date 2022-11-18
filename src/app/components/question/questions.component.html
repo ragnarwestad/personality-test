@@ -4,7 +4,7 @@
       <span>Welcome {{name}}</span>
     </div>
 
-    <ng-container *ngIf="!test.isCompleted; else testRunning">
+    <ng-container *ngIf="!test.isCompleted; else showResults">
       <div class="d-flex justify-content-around py-2">
         <div class="question-remain">
           <span>Question {{test.currentQuestion + 1}} of {{test.questions.length}}</span>
@@ -42,7 +42,7 @@
       </div>
     </ng-container>
 
-    <ng-template #testRunning>
+    <ng-template #showResults>
       <div class="row d-flex justify-content-between">
         <img style="width: 50%;" class="img-fluid col-sm-12 mx-auto"
              src="https://icon-library.com/images/celebration-icon-png/celebration-icon-png-7.jpg" alt="">
