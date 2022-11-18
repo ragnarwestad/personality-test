@@ -52,6 +52,9 @@
           <p>Total introvert answers : {{test.introvertAnswers}} </p>
           <p>Total extrovert answers : {{test.extrovertAnswers}} </p>
           <p>Final verdict, you are : {{test.isIntrovert() ? 'Introvert' : 'Extrovert'}} </p>
+          <button class="btn btn-primary btn-lg" routerLink="/question" (click)="resetTest()">
+            Try again
+          </button>
         </div>
       </div>
     </ng-template>

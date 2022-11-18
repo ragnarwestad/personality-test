@@ -10,6 +10,9 @@ export class PersonalityTest {
 
   resetTest(): void {
     this.currentQuestion = 0;
+    this.isCompleted = false;
+    this.introvertAnswers = 0;
+    this.extrovertAnswers = 0;
   }
 
   answerQuestion(currentQno: number, answer: Answer): void {
