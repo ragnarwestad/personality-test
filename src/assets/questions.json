@@ -8,14 +8,6 @@
           "introvert": true
         },
         {
-          "text": "Think it’s more important to give them some of your time; work can wait",
-          "introvert": false
-        },
-        {
-          "text": "Listen, but with only with half an ear",
-          "introvert": false
-        },
-        {
           "text": "Interrupt and explain that you are really busy at the moment",
           "introvert": false
         }
@@ -25,19 +17,7 @@
       "questionText": "You’ve been sitting in the doctor’s waiting room for more than 25 minutes. You:",
       "answers": [
         {
-          "text": "Look at your watch every two minutes",
-          "introvert": false
-        },
-        {
           "text": "Bubble with inner anger, but keep quiet",
-          "introvert": false
-        },
-        {
-          "text": "boolean",
-          "introvert": false
-        },
-        {
-          "text": "Explain to other equally impatient people in the room that the doctor is always running late",
           "introvert": true
         },
         {
@@ -51,18 +31,10 @@
       "answers": [
         {
           "text": "Don’t dare contradict them",
-          "introvert": false
-        },
-        {
-          "text": "Think that they are obviously right",
           "introvert": true
         },
         {
           "text": "Defend your own point of view, tooth and nail",
-          "introvert": false
-        },
-        {
-          "text": "Continuously interrupt your colleague",
           "introvert": false
         }
       ]
@@ -71,16 +43,8 @@
       "questionText": "You are taking part in a guided tour of a museum. You:",
       "answers": [
         {
-          "text": "Are a bit too far towards the back so don’t really hear what the guide is saying",
-          "introvert": true
-        },
-        {
           "text": "Follow the group without question",
-          "introvert": false
-        },
-        {
-          "text": "Make sure that everyone is able to hear properly",
-          "introvert": false
+          "introvert": true
         },
         {
           "text": "Are right up the front, adding your own comments in a loud voice",
@@ -93,19 +57,11 @@
       "answers": [
         {
           "text": "Ask you to tell a story in front of everyone else",
-          "introvert": false
+          "introvert": true
         },
         {
           "text": "Talk privately between themselves",
           "introvert": false
-        },
-        {
-          "text": "Hang around you all evening",
-          "introvert": false
-        },
-        {
-          "text": "Always drag the conversation back to themselves",
-          "introvert": true
         }
       ]
     }
