@@ -2,11 +2,19 @@
   <h1 class="display-5 fw-bold">Welcome to the personality test app</h1>
   <p class="col-md-8 fs-4">This test contains a total of 5 questions</p>
   <p class="col-md-8 fs-4">Refreshing the page will reset the test</p>
-  <div class="name col-md-4 my-3">
-    <label>Enter your name:</label>
-    <input #name type="text" class="form-control">
-  </div>
-  <button class="btn btn-primary btn-lg" routerLink="/question" (click)="startTest()">
-    Start the Test
-  </button>
+
+  <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
+    <div class="form-group col-md-6 my-5">
+      <label>Enter your name:</label>
+      <input type="text" name="name" class="form-control" [(ngModel)]="name2" #name="ngModel"
+             [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+      <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
+        <p *ngIf="name?.errors?.['required']">Name is required</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-lg">Start test</button>
+    </div>
+  </form>
+
 </div>

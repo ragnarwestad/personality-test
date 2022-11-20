@@ -1,4 +1,5 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-welcome',
@@ -7,13 +8,16 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 })
 export class WelcomeComponent {
 
-  @ViewChild('name') nameKey!: ElementRef;
+  name2: string = '';
 
-  constructor() {
+  constructor(public router: Router) {
+
   }
 
-  startTest(): void {
-    localStorage.setItem("name", this.nameKey.nativeElement.value);
+  onSubmit(form: any) {
+    console.log(form.value.name);
+    localStorage.setItem("name", form.value.name);
+    this.router.navigateByUrl('/question');
   }
 
 }
