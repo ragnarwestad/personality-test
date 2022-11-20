@@ -5,19 +5,27 @@ export class PersonalityTest {
   public questions: Question[] = [];
   public introvertAnswers: number = 0;
   public extrovertAnswers: number = 0;
-  public isCompleted: boolean = false;
   public currentQuestion: number = 0;
+  private completed: boolean = false;
+
+  isCompleted(): boolean {
+    return this.completed;
+  }
 
   resetTest(): void {
     this.currentQuestion = 0;
-    this.isCompleted = false;
+    this.completed = false;
     this.introvertAnswers = 0;
     this.extrovertAnswers = 0;
   }
 
+  getCurrentQuestionText(): string {
+    return this.questions.length > 0 ? this.questions[this.currentQuestion].questionText : '';
+  }
+
   answerQuestion(currentQno: number, answer: Answer): void {
     if (currentQno === this.questions.length) {
-      this.isCompleted = true;
+      this.completed = true;
     }
     if (answer.introvert) {
       this.currentQuestion++;
@@ -44,4 +52,5 @@ export class PersonalityTest {
   isIntrovert(): boolean {
     return this.introvertAnswers >= this.extrovertAnswers;
   }
+
 }

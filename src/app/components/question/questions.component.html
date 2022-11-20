@@ -4,7 +4,7 @@
       <span>Welcome {{name}}</span>
     </div>
 
-    <ng-container *ngIf="!test.isCompleted; else showResults">
+    <ng-container *ngIf="!test.isCompleted(); else showResults">
       <div class="d-flex justify-content-around py-2">
         <div class="question-remain">
           <span>Question {{test.currentQuestion + 1}} of {{test.questions.length}}</span>
@@ -17,7 +17,7 @@
       </div>
       <div class="question">
         <div class="card">
-          <h3>{{test.questions[test.currentQuestion].questionText}}</h3>
+          <h3>{{test.getCurrentQuestionText()}}</h3>
         </div>
       </div>
       <div class="options">
